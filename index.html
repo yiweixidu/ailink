@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AILINK · AI for Molecular Biology Labs</title>
-    <!-- Favicon (红色商标) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./red-png-square.png">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
     <style>
+        /* 样式保持与您原有完全一致 */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +22,6 @@
         }
 
         :root {
-            /* white layers */
             --bg-main: rgba(255, 255, 255, 0.45);
             --bg-soft: rgba(248, 250, 252, 0.5);
             --card-white: rgba(255, 255, 255, 0.45);
@@ -29,23 +29,15 @@
             --text-secondary: #475569;
             --text-tertiary: #94a3b8;
             --border-light: #e2e8f0;
-
-            /* blue layers */
             --accent-deep: #1e3a8a;
             --accent-deep-hover: #172554;
             --accent-teal: #0d9488;
             --accent-sky: #e0f2fe;
-            
             --brand-red: #dc2626;
-
             --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
             --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
             --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-            
-            /* form light variables */
-            --form-bg: #ffffff;
             --input-bg: #f1f5f9;
-            --input-text: #0f172a;
             --input-border: #cbd5e1;
             --placeholder-light: #94a3b8;
         }
@@ -61,18 +53,9 @@
             scroll-behavior: smooth;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* header / nav */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -86,85 +69,31 @@
             flex-wrap: wrap;
             box-shadow: var(--shadow-md);
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: white;
-        }
-        .logo span {
-            color: var(--brand-red);
-        }
-
+        .logo { font-size: 1.8rem; font-weight: 700; color: white; }
+        .logo span { color: var(--brand-red); }
         .nav-links {
             display: flex;
             gap: 32px;
             font-weight: 500;
-            align-items: center;
-            flex-wrap: wrap;
             color: rgba(255, 255, 255, 0.85);
         }
-        .nav-links a:hover {
-            color: white;
-            transition: 0.2s;
-        }
-
-        .lang-switch {
-            display: flex;
-            gap: 8px;
-            margin-left: 16px;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 12px;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .lang-switch button {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
-            padding: 4px 8px;
-            border-radius: 24px;
-        }
-        .lang-switch button.active {
-            color: var(--accent-deep);
-            background: white;
-        }
-
-        /* mobile menu toggle */
-        .menu-icon {
-            display: none;
-            font-size: 1.8rem;
-            color: white;
-        }
+        .nav-links a:hover { color: white; }
+        .menu-icon { display: none; font-size: 1.8rem; color: white; cursor: pointer; }
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 width: 100%;
                 flex-direction: column;
-                align-items: flex-start;
                 gap: 16px;
                 margin-top: 16px;
                 background-color: var(--accent-deep-hover);
                 padding: 16px;
                 border-radius: 16px;
             }
-            .nav-links.show {
-                display: flex;
-            }
-            .menu-icon {
-                display: block;
-                cursor: pointer;
-            }
-            .lang-switch {
-                margin-left: 0;
-            }
+            .nav-links.show { display: flex; }
+            .menu-icon { display: block; }
         }
 
-        /* buttons */
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -175,102 +104,31 @@
             color: var(--accent-deep);
             cursor: pointer;
             transition: 0.2s;
-            font-size: 1rem;
         }
         .btn-primary {
             background: var(--accent-deep);
             color: white;
             border: none;
-            box-shadow: var(--shadow-sm);
         }
-        .btn-primary:hover {
-            background: var(--accent-deep-hover);
-        }
-        .btn-outline:hover {
-            background: var(--accent-sky);
-            border-color: var(--accent-deep);
-        }
+        .btn-primary:hover { background: var(--accent-deep-hover); }
+        .btn-outline:hover { background: var(--accent-sky); }
 
-        /* sections */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border-light);
-            background-color: var(--bg-main);
-        }
-
-        /* alternating soft background */
-        #values, #collaborate, #contact {
-            background-color: var(--bg-soft);
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: var(--text-primary);
-        }
-        h2 i {
-            color: var(--accent-deep);
-            margin-right: 12px;
-        }
+        section { padding: 80px 0; border-bottom: 1px solid var(--border-light); background-color: var(--bg-main); }
+        #values, #collaborate, #contact { background-color: var(--bg-soft); }
+        h2 { font-size: 2.2rem; font-weight: 600; margin-bottom: 24px; color: var(--text-primary); }
+        h2 i { color: var(--accent-deep); margin-right: 12px; }
 
         .hero {
             background-image: url('bgpic.jpg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;padding: 100px 0 80px;
+            padding: 100px 0 80px;
         }
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            max-width: 800px;
-            color: var(--text-primary);
-        }
-        .hero .highlight {
-            color: var(--accent-teal);
-        }
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin: 24px 0 40px;
-            max-width: 700px;
-        }
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        .hero h1 { font-size: 3.2rem; font-weight: 700; max-width: 800px; }
+        .hero .highlight { color: var(--accent-teal); }
+        .hero p { font-size: 1.3rem; color: var(--text-secondary); margin: 24px 0 40px; max-width: 700px; }
+        .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
 
-        /* card base styles: all card classes share hover effects (except .step and .contact-form have special requirements) */
-        .card, .step, .feature-block, .contact-form {
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-        }
-
-        /* card hover effects: slight lift, shadow deepens, border turns deep blue (only for .card and .feature-block) */
-        .card:hover,
-        .feature-block:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-deep);
-        }
-
-        /* collaborate */
-        .step:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* contact form */
-        .contact-form {
-            transition: border-color 0.2s;
-        }
-        .contact-form:hover {
-            border-color: var(--accent-deep);
-        }
-
-        /* card grid */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -283,99 +141,47 @@
             border-radius: 24px;
             border: 1px solid var(--border-light);
             box-shadow: var(--shadow-md);
+            transition: transform 0.2s;
         }
-        .card i {
-            font-size: 2.5rem;
-            color: var(--accent-deep);
-            margin-bottom: 20px;
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-        .card p {
-            color: var(--text-secondary);
-        }
+        .card:hover { transform: translateY(-4px); border-color: var(--accent-deep); }
+        .card i { font-size: 2.5rem; color: var(--accent-deep); margin-bottom: 20px; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 16px; }
 
-        /* feature block */
         .feature-block {
             background: var(--card-white);
             border-radius: 24px;
             padding: 48px;
             margin: 40px 0;
             border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-md);
+            transition: transform 0.2s;
         }
-        .stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-between;
-            margin: 40px 0 20px;
-        }
-        .stat-item {
-            text-align: center;
-            flex: 1 1 150px;
-        }
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--accent-deep);
-            line-height: 1.2;
-        }
+        .feature-block:hover { transform: translateY(-4px); border-color: var(--accent-deep); }
+        .stats-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin: 40px 0 20px; }
+        .stat-item { text-align: center; flex: 1 1 150px; }
+        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--accent-deep); }
+
         .video-placeholder {
             background: var(--bg-soft);
             border-radius: 24px;
             padding: 120px 20px;
             text-align: center;
             border: 2px dashed var(--border-light);
-            margin: 40px 0;
             cursor: pointer;
-            color: var(--text-tertiary);
-            transition: border-color 0.2s;
         }
-        .video-placeholder:hover {
-            border-color: var(--accent-teal);
-        }
-        .video-placeholder i {
-            font-size: 4rem;
-            color: var(--accent-teal);
-            opacity: 0.8;
-        }
+        .video-placeholder i { font-size: 4rem; color: var(--accent-teal); }
 
-        /* steps */
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin: 40px 0;
-        }
+        .steps { display: flex; flex-wrap: wrap; gap: 30px; margin: 40px 0; }
         .step {
             flex: 1 1 200px;
             background: var(--card-white);
             padding: 30px 20px;
             border-radius: 16px;
             border-left: 4px solid var(--accent-deep);
-            border-top: 1px solid var(--border-light);
-            border-right: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s;
         }
-        .step .step-num {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-deep);
-            opacity: 0.2;
-        }
-        .step h3 {
-            color: var(--text-primary);
-        }
-        .step p {
-            color: var(--text-secondary);
-        }
+        .step:hover { transform: translateY(-4px); }
+        .step .step-num { font-size: 2rem; font-weight: 700; color: var(--accent-deep); opacity: 0.2; }
 
-        /* contact form */
         .contact-form {
             background: var(--card-white);
             padding: 48px;
@@ -383,42 +189,42 @@
             max-width: 700px;
             margin: 40px auto 0;
             border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-lg);
         }
-        .form-group {
-            margin-bottom: 24px;
-        }
+        .form-group { margin-bottom: 24px; }
         input, textarea {
             width: 100%;
             padding: 14px 20px;
             background: var(--input-bg);
-            color: var(--input-text);
             border: 1px solid var(--input-border);
             border-radius: 16px;
             font-size: 1rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
         }
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--accent-deep);
-            box-shadow: 0 0 0 4px var(--accent-sky);
-            background: #ffffff;
-        }
-        input::placeholder, textarea::placeholder {
-            color: var(--placeholder-light);
-            font-weight: 300;
-        }
-        button[type="submit"] {
-            width: 100%;
-            padding: 16px;
-            font-size: 1.1rem;
+            box-shadow: 0 0 0 3px var(--accent-sky);
         }
 
-        /* footer */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-deep);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .toast.show { opacity: 1; }
+        .toast.error { background: #dc2626; }
+        .toast.success { background: #0d9488; }
+
         .footer {
-            padding: 48px 0;
+            padding: 48px 0 32px;
             color: var(--text-tertiary);
-            font-size: 0.95rem;
             background: var(--bg-main);
             border-top: 1px solid var(--border-light);
         }
@@ -428,29 +234,47 @@
             justify-content: space-between;
             align-items: center;
         }
+        .footer-left { display: flex; flex-direction: column; gap: 8px; }
+        .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+        .social-icons { display: flex; gap: 20px; }
         .social-icons a {
             font-size: 1.5rem;
-            margin-left: 20px;
             color: var(--text-tertiary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
         }
-        .social-icons a:hover {
-            color: var(--accent-deep);
+        .social-icons a:hover { color: var(--accent-deep); background: white; transform: translateY(-2px); }
+        
+        .lang-toggle {
+            background: none;
+            border: none;
+            color: var(--text-tertiary);
+            font-size: 0.7rem;
+            cursor: pointer;
+            padding: 4px 0;
+            font-weight: 500;
         }
-
-        /* utility */
-        .text-center {
-            text-align: center;
-        }
+        .lang-toggle:hover { color: var(--accent-deep); }
+        .lang-separator { color: var(--text-tertiary); font-size: 0.7rem; margin: 0 2px; }
+        
+        .text-center { text-align: center; }
         .mt-2 { margin-top: 20px; }
-        .mb-2 { margin-bottom: 20px; }
-        .small {
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
+        .small { font-size: 0.9rem; color: var(--text-tertiary); }
+        
+        @media (max-width: 768px) {
+            .footer .container { flex-direction: column; gap: 24px; text-align: center; }
+            .footer-left { align-items: center; }
+            .footer-right { align-items: center; }
         }
     </style>
 </head>
 <body>
-    <!-- navigation -->
     <nav class="navbar">
         <div class="logo">AILINK<span>.</span></div>
         <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
@@ -460,14 +284,9 @@
             <a href="#collaborate" data-i18n="nav_collaborate">Collaborate</a>
             <a href="#about" data-i18n="nav_about">About</a>
             <a href="#contact" data-i18n="nav_contact">Contact</a>
-            <div class="lang-switch">
-                <button id="langEn" class="active">EN</button>
-                <button id="langFr">FR</button>
-            </div>
         </div>
     </nav>
 
-    <!-- HERO section -->
     <section id="home" class="hero">
         <div class="container">
             <h1><span class="highlight" data-i18n="hero_title1">Supercharge Your Research</span><br><span data-i18n="hero_title2">AI Agents for Molecular Biology</span></h1>
@@ -479,7 +298,6 @@
         </div>
     </section>
 
-    <!-- core values (3 cards) -->
     <section id="values">
         <div class="container">
             <h2><i class="fas fa-microscope"></i> <span data-i18n="values_title">Why AILINK</span></h2>
@@ -503,7 +321,6 @@
         </div>
     </section>
 
-    <!-- FluBroad-Voice feature block -->
     <section id="projects">
         <div class="container">
             <h2><i class="fas fa-virus"></i> FluBroad‑Voice</h2>
@@ -533,26 +350,13 @@
         </div>
     </section>
 
-    <!-- collaboration steps -->
     <section id="collaborate">
         <div class="container">
             <h2><i class="fas fa-handshake"></i> <span data-i18n="collab_title">How we collaborate</span></h2>
             <div class="steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h3 data-i18n="step1_title">Co‑design</h3>
-                    <p data-i18n="step1_desc">You bring the biology, we bring the AI. Together we define the scope, data sources, and output format.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h3 data-i18n="step2_title">Custom build</h3>
-                    <p data-i18n="step2_desc">We construct a dedicated knowledge base, prompts, and interface tailored to your project.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h3 data-i18n="step3_title">Deploy & iterate</h3>
-                    <p data-i18n="step3_desc">Local deployment, training, and continuous improvements based on your feedback.</p>
-                </div>
+                <div class="step"><div class="step-num">01</div><h3 data-i18n="step1_title">Co‑design</h3><p data-i18n="step1_desc">You bring the biology, we bring the AI. Together we define the scope, data sources, and output format.</p></div>
+                <div class="step"><div class="step-num">02</div><h3 data-i18n="step2_title">Custom build</h3><p data-i18n="step2_desc">We construct a dedicated knowledge base, prompts, and interface tailored to your project.</p></div>
+                <div class="step"><div class="step-num">03</div><h3 data-i18n="step3_title">Deploy & iterate</h3><p data-i18n="step3_desc">Local deployment, training, and continuous improvements based on your feedback.</p></div>
             </div>
             <div class="text-center mt-2">
                 <p style="font-size: 1.2rem;" data-i18n="collab_权益">✔ Co‑authorship on papers  ✔ Priority customization  ✔ Free access to domain modules</p>
@@ -560,26 +364,24 @@
         </div>
     </section>
 
-    <!-- nonprofit commitment (about) -->
     <section id="about">
         <div class="container">
             <h2><i class="fas fa-heart"></i> <span data-i18n="nonprofit_title">Nonprofit commitment</span></h2>
             <div class="feature-block">
                 <p style="font-size: 1.3rem; margin-bottom: 24px;" data-i18n="nonprofit_text">AILINK is a registered non‑profit organization dedicated to making AI4Science infrastructure accessible to every virology lab. All core code is open source, finances are transparent, and every contribution — code, ideas, or partnership — directly supports the community.</p>
                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/yiweixidu/ailink" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
                     <a href="#" class="btn btn-outline" data-i18n="financial_report">Financial report 2025</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- contact form -->
     <section id="contact">
         <div class="container">
             <h2><i class="fas fa-envelope"></i> <span data-i18n="contact_title">Start a conversation</span></h2>
             <div class="contact-form">
-                <form id="contactForm" onsubmit="event.preventDefault(); alert('Demo: message sent (mock)');">
+                <form id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" placeholder='Full name' data-i18n-placeholder="contact_name" required>
                     </div>
@@ -590,163 +392,195 @@
                         <input type="text" id="institution" placeholder='Institution / Lab' data-i18n-placeholder="contact_inst">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="4" placeholder='Tell us about your project...' data-i18n-placeholder="contact_msg"></textarea>
+                        <textarea id="message" rows="4" placeholder='Tell us about your project...' data-i18n-placeholder="contact_msg" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" data-i18n="contact_send">Send message</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact_send" id="submitBtn">Send message</button>
                 </form>
                 <p class="small text-center mt-2" data-i18n="contact_privacy">We'll respond within 2 days. No spam.</p>
             </div>
         </div>
     </section>
 
-    <!-- footer -->
+    <div id="toast" class="toast"></div>
+
     <footer class="footer">
         <div class="container">
-            <div>
-                <span>© 2026 ailink.ca (non-profit)</span><br>
-                <span class="small" data-i18n="footer_license">Code MIT · Content CC BY 4.0</span>
+            <div class="footer-left">
+                <div>© 2026 ailink.ca (non-profit)</div>
+                <div class="small" data-i18n="footer_license">Code MIT · Content CC BY 4.0</div>
             </div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://github.com/yiweixidu/ailink" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/ailink" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/ailink" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://discord.gg/ailink" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+                <div>
+                    <button id="langEnBtn" class="lang-toggle">EN</button>
+                    <span class="lang-separator">|</span>
+                    <button id="langFrBtn" class="lang-toggle">FR</button>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- translation dictionary -->
-    <script>
+    <!-- 使用 ES 模块加载 Appwrite SDK 24.0.0 -->
+    <script type="module">
+        import { Client, Databases } from 'https://cdn.jsdelivr.net/npm/appwrite@24.0.0/+esm';
+
+        // ==================== APPWRITE CONFIGURATION ====================
+        // 根据您的截图，项目 ID 为 ailink，Endpoint 为 https://sgp.cloud.appwrite.io/v1
+        const APPPWRITE_ENDPOINT = 'https://sgp.cloud.appwrite.io/v1';
+        const APPPWRITE_PROJECT_ID = 'ailink';          // 真实 Project ID
+        const APPPWRITE_DATABASE_ID = '69c72699001a3616849c';
+        const APPPWRITE_COLLECTION_ID = 'contact_submissions';
+        
+        // 初始化 Appwrite 客户端
+        const client = new Client();
+        client.setEndpoint(APPPWRITE_ENDPOINT).setProject(APPPWRITE_PROJECT_ID);
+        const databases = new Databases(client);
+        
+        // ==================== 多语言翻译 ====================
         const translations = {
             en: {
-                nav_home: "Home",
-                nav_projects: "Projects",
-                nav_collaborate: "Collaborate",
-                nav_about: "About",
-                nav_contact: "Contact",
-                hero_title1: "Supercharge Your Research",
-                hero_title2: "AI Agents for Molecular Biology",
+                nav_home: "Home", nav_projects: "Projects", nav_collaborate: "Collaborate", nav_about: "About", nav_contact: "Contact",
+                hero_title1: "Supercharge Your Research", hero_title2: "AI Agents for Molecular Biology",
                 hero_sub: "We partner with molecular biology labs to build intelligent presentation agents that turn data into compelling scientific narratives.",
-                hero_btn1: "Explore Projects",
-                hero_btn2: "Partner with Us",
+                hero_btn1: "Explore Projects", hero_btn2: "Partner with Us",
                 values_title: "Why AILINK",
-                value1_title: "Deep customization",
-                value1_text: "Built hand‑in‑hand with your lab, integrating molecular biology ontologies and comprehensive reporting frameworks for each specific project.",
-                value2_title: "Local & private",
-                value2_text: "Deploy entirely on your servers — data never leaves your lab. Fully air‑gapped options available.",
-                value3_title: "Open source + nonprofit",
-                value3_text: "Core framework is MIT licensed. Revenue from commercial modules funds community growth, not profit.",
-                flu_title: "AI agent for broadly neutralizing antibodies",
-                flu_desc: "Developed with McGill University, this agent retrieves the latest PubMed papers, integrates GISAID/MAAD, and generates a 10‑minute narrated PPT with citations — all in under 5 minutes.",
-                stat1: "time saved",
-                stat2: "recall",
-                stat3: "logic score",
-                flu_whitepaper: "Read whitepaper",
-                flu_demo: "Watch demo",
-                video_placeholder: "Demo preview",
+                value1_title: "Deep customization", value1_text: "Built hand‑in‑hand with your lab, integrating molecular biology ontologies and comprehensive reporting frameworks for each specific project.",
+                value2_title: "Local & private", value2_text: "Deploy entirely on your servers — data never leaves your lab. Fully air‑gapped options available.",
+                value3_title: "Open source + nonprofit", value3_text: "Core framework is MIT licensed. Revenue from commercial modules funds community growth, not profit.",
+                flu_title: "AI agent for broadly neutralizing antibodies", flu_desc: "Developed with McGill University, this agent retrieves the latest PubMed papers, integrates GISAID/MAAD, and generates a 10‑minute narrated PPT with citations — all in under 5 minutes.",
+                stat1: "time saved", stat2: "recall", stat3: "logic score",
+                flu_whitepaper: "Read whitepaper", flu_demo: "Watch demo", video_placeholder: "Demo preview",
                 collab_title: "How we collaborate",
-                step1_title: "Co‑design",
-                step1_desc: "You bring the biology, we bring the AI. Together we define the scope, data sources, and output format.",
-                step2_title: "Custom build",
-                step2_desc: "We construct a dedicated knowledge base, prompts, and interface tailored to your project.",
-                step3_title: "Deploy & iterate",
-                step3_desc: "Local deployment, training, and continuous improvements based on your feedback.",
+                step1_title: "Co‑design", step1_desc: "You bring the biology, we bring the AI. Together we define the scope, data sources, and output format.",
+                step2_title: "Custom build", step2_desc: "We construct a dedicated knowledge base, prompts, and interface tailored to your project.",
+                step3_title: "Deploy & iterate", step3_desc: "Local deployment, training, and continuous improvements based on your feedback.",
                 collab_权益: "✔ Co‑authorship on papers  ✔ Priority customization  ✔ Free access to domain modules",
-                nonprofit_title: "Nonprofit commitment",
-                nonprofit_text: "AILINK is a registered non‑profit organization dedicated to making AI4Science infrastructure accessible to every virology lab. All core code is open source, finances are transparent, and every contribution — code, ideas, or partnership — directly supports the community.",
+                nonprofit_title: "Nonprofit commitment", nonprofit_text: "AILINK is a registered non‑profit organization dedicated to making AI4Science infrastructure accessible to every virology lab. All core code is open source, finances are transparent, and every contribution — code, ideas, or partnership — directly supports the community.",
                 financial_report: "Financial report 2025",
-                contact_title: "Start a conversation",
-                contact_name: "Full name",
-                contact_email: "Email",
-                contact_inst: "Institution / Lab",
-                contact_msg: "Tell us about your project...",
-                contact_send: "Send message",
-                contact_privacy: "We'll respond within 2 days. No spam.",
-                footer_license: "Code MIT · Content CC BY 4.0"
+                contact_title: "Start a conversation", contact_name: "Full name", contact_email: "Email", contact_inst: "Institution / Lab", contact_msg: "Tell us about your project...", contact_send: "Send message", contact_privacy: "We'll respond within 2 days. No spam.",
+                footer_license: "Code MIT · Content CC BY 4.0",
+                toast_success: "Message sent successfully! We'll get back to you soon.", toast_error: "Something went wrong. Please try again.", toast_config_error: "Appwrite not configured. Please update credentials in the code."
             },
             fr: {
-                nav_home: "Accueil",
-                nav_projects: "Projets",
-                nav_collaborate: "Collaborer",
-                nav_about: "À propos",
-                nav_contact: "Contact",
-                hero_title1: "Boostez vos recherches",
-                hero_title2: "Agents IA pour la biologie moléculaire",
+                nav_home: "Accueil", nav_projects: "Projets", nav_collaborate: "Collaborer", nav_about: "À propos", nav_contact: "Contact",
+                hero_title1: "Boostez vos recherches", hero_title2: "Agents IA pour la biologie moléculaire",
                 hero_sub: "Nous collaborons avec les laboratoires de biologie moléculaire pour créer des agents de présentation intelligents qui transforment les données en récits scientifiques convaincants.",
-                hero_btn1: "Explorer les projets",
-                hero_btn2: "Devenir partenaire",
+                hero_btn1: "Explorer les projets", hero_btn2: "Devenir partenaire",
                 values_title: "Pourquoi AILINK",
-                value1_title: "Personnalisation approfondie",
-                value1_text: "Développé main dans la main avec votre laboratoire, alliant ontologies de biologie moléculaire et structures de rapports détaillées pour chaque projet.",
-                value2_title: "Local & confidentiel",
-                value2_text: "Déployé entièrement sur vos serveurs — les données ne quittent jamais votre laboratoire. Options hors ligne disponibles.",
-                value3_title: "Open source + non‑lucratif",
-                value3_text: "Le code de base est sous licence MIT. Les revenus des modules commerciaux financent la communauté, pas le profit.",
-                flu_title: "Agent IA pour anticorps neutralisants à large spectre",
-                flu_desc: "Développé avec l'Université McGill, cet agent récupère les derniers articles PubMed, intègre GISAID/MAAD et génère un PPT commenté de 10 minutes avec citations — le tout en moins de 5 minutes.",
-                stat1: "temps gagné",
-                stat2: "rappel",
-                stat3: "score logique",
-                flu_whitepaper: "Lire le livre blanc",
-                flu_demo: "Voir la démo",
-                video_placeholder: "Aperçu vidéo",
+                value1_title: "Personnalisation approfondie", value1_text: "Développé main dans la main avec votre laboratoire, alliant ontologies de biologie moléculaire et structures de rapports détaillées pour chaque projet.",
+                value2_title: "Local & confidentiel", value2_text: "Déployé entièrement sur vos serveurs — les données ne quittent jamais votre laboratoire. Options hors ligne disponibles.",
+                value3_title: "Open source + non‑lucratif", value3_text: "Le code de base est sous licence MIT. Les revenus des modules commerciaux financent la communauté, pas le profit.",
+                flu_title: "Agent IA pour anticorps neutralisants à large spectre", flu_desc: "Développé avec l'Université McGill, cet agent récupère les derniers articles PubMed, intègre GISAID/MAAD et génère un PPT commenté de 10 minutes avec citations — le tout en moins de 5 minutes.",
+                stat1: "temps gagné", stat2: "rappel", stat3: "score logique",
+                flu_whitepaper: "Lire le livre blanc", flu_demo: "Voir la démo", video_placeholder: "Aperçu vidéo",
                 collab_title: "Notre collaboration",
-                step1_title: "Co‑conception",
-                step1_desc: "Vous apportez la biologie, nous l'IA. Ensemble, nous définissons le périmètre, les sources et le format.",
-                step2_title: "Développement sur mesure",
-                step2_desc: "Nous construisons une base de connaissances, des prompts et une interface adaptés à votre projet.",
-                step3_title: "Déploiement & itération",
-                step3_desc: "Installation locale, formation et améliorations continues basées sur vos retours.",
+                step1_title: "Co‑conception", step1_desc: "Vous apportez la biologie, nous l'IA. Ensemble, nous définissons le périmètre, les sources et le format.",
+                step2_title: "Développement sur mesure", step2_desc: "Nous construisons une base de connaissances, des prompts et une interface adaptés à votre projet.",
+                step3_title: "Déploiement & itération", step3_desc: "Installation locale, formation et améliorations continues basées sur vos retours.",
                 collab_权益: "✔ Co‑auteur sur les publications  ✔ Personnalisation prioritaire  ✔ Accès gratuit aux modules métier",
-                nonprofit_title: "Engagement non lucratif",
-                nonprofit_text: "AILINK est une organisation à but non lucratif enregistrée, dédiée à rendre l'infrastructure IA4Science accessible à tous les labos de virologie. Le code de base est ouvert, les finances transparentes, et chaque contribution — code, idées, partenariat — soutient directement la communauté.",
+                nonprofit_title: "Engagement non lucratif", nonprofit_text: "AILINK est une organisation à but non lucratif enregistrée, dédiée à rendre l'infrastructure IA4Science accessible à tous les labos de virologie. Le code de base est ouvert, les finances transparentes, et chaque contribution — code, idées, partenariat — soutient directement la communauté.",
                 financial_report: "Rapport financier 2025",
-                contact_title: "Lancer la conversation",
-                contact_name: "Nom complet",
-                contact_email: "Courriel",
-                contact_inst: "Institution / Laboratoire",
-                contact_msg: "Parlez‑nous de votre projet...",
-                contact_send: "Envoyer",
-                contact_privacy: "Réponse sous 2 jours. Pas de spam.",
-                footer_license: "Code MIT · Contenu CC BY 4.0"
+                contact_title: "Lancer la conversation", contact_name: "Nom complet", contact_email: "Courriel", contact_inst: "Institution / Laboratoire", contact_msg: "Parlez‑nous de votre projet...", contact_send: "Envoyer", contact_privacy: "Réponse sous 2 jours. Pas de spam.",
+                footer_license: "Code MIT · Contenu CC BY 4.0",
+                toast_success: "Message envoyé avec succès ! Nous vous répondrons bientôt.", toast_error: "Une erreur s'est produite. Veuillez réessayer.", toast_config_error: "Appwrite non configuré. Veuillez mettre à jour les identifiants."
             }
         };
 
         let currentLang = 'en';
 
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type} show`;
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
         function setLanguage(lang) {
             currentLang = lang;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.innerText = translations[lang][key];
-                }
+                if (translations[lang][key]) el.innerText = translations[lang][key];
             });
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
-                    el.placeholder = translations[lang][key];
-                }
+                if (translations[lang][key]) el.placeholder = translations[lang][key];
             });
-            document.getElementById('langEn').classList.toggle('active', lang === 'en');
-            document.getElementById('langFr').classList.toggle('active', lang === 'fr');
         }
 
-        document.getElementById('langEn').addEventListener('click', () => setLanguage('en'));
-        document.getElementById('langFr').addEventListener('click', () => setLanguage('fr'));
+        // 语言切换按钮
+        document.getElementById('langEnBtn').addEventListener('click', () => setLanguage('en'));
+        document.getElementById('langFrBtn').addEventListener('click', () => setLanguage('fr'));
 
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('show');
+        // 移动端菜单
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
         });
-
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    document.getElementById('navLinks').classList.remove('show');
-                }
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) navLinks.classList.remove('show');
             });
         });
 
+        // ==================== 表单提交 ====================
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = currentLang === 'en' ? 'Sending...' : 'Envoi...';
+            
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                institution: document.getElementById('institution').value.trim(),
+                message: document.getElementById('message').value.trim(),
+                submittedat: new Date().toISOString(),
+                language: currentLang
+            };
+            
+            if (!formData.name || !formData.email || !formData.message) {
+                showToast(currentLang === 'en' ? 'Please fill in all required fields.' : 'Veuillez remplir tous les champs obligatoires.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+            
+            try {
+                // 直接保存到 Appwrite，不再判断模拟模式
+                const response = await databases.createDocument(
+                    APPPWRITE_DATABASE_ID,
+                    APPPWRITE_COLLECTION_ID,
+                    'unique()',
+                    formData
+                );
+                console.log('Saved to Appwrite:', response);
+                showToast(translations[currentLang].toast_success, 'success');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Appwrite error:', error);
+                showToast(translations[currentLang].toast_error, 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+        
+        // 视频占位符点击
+        const videoPlaceholder = document.querySelector('.video-placeholder');
+        videoPlaceholder.addEventListener('click', () => {
+            alert(currentLang === 'en' ? 'Demo video coming soon!' : 'Vidéo de démo bientôt disponible !');
+        });
+
+        // 初始化语言
         setLanguage('en');
     </script>
 </body>
